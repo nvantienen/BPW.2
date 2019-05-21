@@ -25,7 +25,8 @@ public class ThirdPersonCameraController : MonoBehaviour
     void LateUpdate()
     {
         CamControl();
-        ViewObstructed();
+
+        
     }
 
     void CamControl()
@@ -35,20 +36,13 @@ public class ThirdPersonCameraController : MonoBehaviour
         MouseY = Mathf.Clamp(MouseY, -35, 60);
 
         transform.LookAt(Target);
+        Target.rotation = Quaternion.Euler(MouseY, MouseX, 0);
+        Player.rotation = Quaternion.Euler(0, MouseX, 0);
 
-        if(Input.GetKey(KeyCode.LeftShift))
-        {
-            Target.rotation = Quaternion.Euler(MouseY, MouseX, 0);
-        }
-        else
-        {
-            Target.rotation = Quaternion.Euler(MouseY, MouseX, 0);
-            Player.rotation = Quaternion.Euler(0, MouseX, 0);
-        }
        
     }
 
-    void ViewObstructed()
+   /* void ViewObstructed()
     {
         RaycastHit hit;
 
@@ -77,4 +71,5 @@ public class ThirdPersonCameraController : MonoBehaviour
             }
         }
     }
+    */
 }
