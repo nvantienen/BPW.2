@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class playerAttack : MonoBehaviour
+public class Bullet : MonoBehaviour
 {
     public float speed = 10f;
 
@@ -16,5 +16,14 @@ public class playerAttack : MonoBehaviour
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
 
 
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.name == "Enemy")
+        {
+            Debug.Log("Triggered");
+
+        }
     }
 }
