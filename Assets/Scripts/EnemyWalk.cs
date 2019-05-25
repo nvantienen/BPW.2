@@ -3,9 +3,11 @@ using UnityEngine.AI;
 
 public class EnemyWalk : MonoBehaviour
 {
+    public float attackRadius = 10f;
     public float lookRadius = 10f;
     Transform target;
     NavMeshAgent agent;
+    
 
 
 
@@ -27,13 +29,22 @@ public class EnemyWalk : MonoBehaviour
         if (distance <= lookRadius)
         {
             agent.SetDestination(target.position);
+     
         }
+        if (distance <= attackRadius)
+        {
+            Debug.Log("Attack!");
+
+        }
+
+
     }
 
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, lookRadius);
+        Gizmos.DrawWireSphere(transform.position, attackRadius);
 
     }
 }
