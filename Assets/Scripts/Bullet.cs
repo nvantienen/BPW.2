@@ -18,12 +18,16 @@ public class Bullet : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter(Collider other)
+
+    private void OnCollisionEnter(Collision collision)
     {
-        if (other.gameObject.name == "Enemy")
+        if (collision.gameObject.name == "Enemy")
         {
             Debug.Log("Triggered");
 
+
         }
+            Destroy(gameObject);
+        
     }
 }

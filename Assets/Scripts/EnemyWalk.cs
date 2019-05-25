@@ -37,8 +37,10 @@ public class EnemyWalk : MonoBehaviour
 
         }
 
+       
 
     }
+
 
     private void OnDrawGizmosSelected()
     {
