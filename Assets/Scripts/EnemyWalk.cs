@@ -12,14 +12,14 @@ public class EnemyWalk : MonoBehaviour
 
 
     // Start is called before the first frame update
-    void Start()
+    /*void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         target = GameObject.Find("Player").transform;
 
 
     
-    }
+    }*/
 
     // Update is called once per frame
     void Update()
@@ -45,7 +45,7 @@ public class EnemyWalk : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, lookRadius);
+        //Gizmos.DrawWireSphere(transform.position, lookRadius);
         Gizmos.DrawWireSphere(transform.position, attackRadius);
 
     }

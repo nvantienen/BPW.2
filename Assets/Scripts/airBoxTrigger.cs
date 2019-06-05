@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class airBoxTrigger : MonoBehaviour
 {
@@ -19,7 +20,17 @@ public class airBoxTrigger : MonoBehaviour
             
             other.gameObject.GetComponent<Rigidbody>().AddForce(Vector3.up * blowForce* Time.deltaTime * 100);
             Debug.Log("werk pls");
+            StartCoroutine("Paralyzed");
         }
+
+    }
+
+
+    IEnumerator Paralyzed()
+    {
+        print(Time.time);
+        yield return new WaitForSeconds(5f);
+        print(Time.time);
 
     }
 }

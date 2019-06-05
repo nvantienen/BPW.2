@@ -9,7 +9,7 @@ public class ThirdPersonCameraController : MonoBehaviour
 
 
     public Transform Obstruction;
-    float zoomSpeed = 2f;
+
 
     void Start()
     {

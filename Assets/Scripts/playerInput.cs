@@ -10,7 +10,7 @@ public class playerInput : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Timer();
+        
         if (Input.GetButtonDown("Fire1"))
         {
             GameObject wind = Instantiate(bullet, firePoint.position, firePoint.rotation);
@@ -19,8 +19,5 @@ public class playerInput : MonoBehaviour
 
     }
     
-    float Timer()
-    {
-        return timeStamp -= Time.deltaTime;
-    }
+   
 }
